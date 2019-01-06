@@ -31,5 +31,8 @@ func main() {
 	// s.TypeTest()
 	// s.PointTest()
 	// s.ParMode()
-	s.StrTest()
+	//s.StrTest()
+	//	s.ArrayTest()
+	//s.MapTest()
+	s.ListTest()
 }

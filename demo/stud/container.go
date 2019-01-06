@@ -82,7 +82,7 @@ func ArrayTest() {
 	fmt.Println(aList) //[0 0 0 0 0 2 3 4 5 0 0 0 0]
 }
 
-func rmItem(srcList []int, index int) (list []int) {
+func rmItem(srcList []int, index int) []int {
 	li := append(srcList[:index], srcList[index+1:]...)
 	return li
 }

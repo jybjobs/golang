@@ -34,5 +34,6 @@ func main() {
 	//s.StrTest()
 	//	s.ArrayTest()
 	//s.MapTest()
-	s.ListTest()
+	//s.ListTest()
+	s.ForTest()
 }

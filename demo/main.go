@@ -14,6 +14,7 @@ package main // 指明包名,小写
    （像面向对象语言中的 private ）。
 */
 import (
+	log "demo/exercise/logger"
 	s "demo/stud"
 	"fmt" //格式化io
 	"math"
@@ -36,6 +37,30 @@ func main() {
 	//s.MapTest()
 	//s.ListTest()
 	//s.ForTest()
-	s.FuncTest()
+	//s.FuncTest()
 	//s.ClosTest()
+	//s.StructTest()
+
+	//------------------- 接口测试
+	f := new(s.File)                         //实例化file
+	var writer s.DataWriter                  //声明接口
+	writer = f                               //将接口赋值，也就是 * File 类型
+	writer.WriteData("interface test info.") //write data: interface test info.
+	//-------------------logger------
+	l := createLogger()
+	l.Log("hello")
+}
+
+//创建日志器
+func createLogger() *log.Logger {
+	l := log.NewLogger()
+	cw := log.NewConsoleWriter()
+	l.RegisterWriter(cw)
+	fw := log.NewFileWriter() //创建文件写入器
+
+	if err := fw.SetFile("info.log"); err != nil {
+		fmt.Println(err)
+	}
+	l.RegisterWriter(fw) //注册文件写入器到日志器中
+	return l
 }

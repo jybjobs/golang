@@ -20,10 +20,11 @@
 > go 入口main所在的包叫main;包和文件夹一一对应，依赖workspace (GOPATH).
 
 * GOPATH 
+```
   $GOPATH/src    // 源码
   $GOPATH/bin    // 二进制可执行文件
   $GOPATH/pkg    // 中间缓存文件
-
+```
 * package特性：
   - 一个目录下的同级文件归属一个包
   - 包名可以与其目录不同名
